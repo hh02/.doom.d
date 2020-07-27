@@ -22,8 +22,16 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 ;;
-(setq doom-font (font-spec :family "Microsoft Yahei Mono" :size 18 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Microsoft Yahei Mono" :size 18))
+
+;; fonts
+(when (member "Sarasa Nerd Font" (font-family-list))
+  (setq doom-font (font-spec :family "Sarasa Nerd Font" :size 20)
+        doom-variable-pitch-font (font-spec :family "Sarasa Nerd Font")
+        doom-unicode-font (font-spec :family "Sarasa Nerd Font")
+        doom-big-font (font-spec :family "Sarasa Nerd Font" :size 24)))
+
+
+
 ;;
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -70,5 +78,7 @@
 ;;   :group 'org-pandoc
 ;;   :type 'list)
 ;;   :after ox)
-;;   set line space
-(setq-default line-spacing 0.5)
+
+
+;; cnfonts
+;;(use-package! cnfonts
