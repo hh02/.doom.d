@@ -48,5 +48,4 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-;; (package! pandoc-mode :disable t)
-;; (package! ox-pandoc :disable t)
+(package! ox-qmd)

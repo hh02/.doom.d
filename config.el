@@ -63,22 +63,5 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-;; ox-hugo config
-
-;; (use-package ox-pandoc
-;;   :init
-;;   (defcustom org-pandoc-menu-entry
-;;   '(
-
-;;     (?M "to markdown." org-pandoc-export-to-markdown)
-;;     (?m "to markdown and open." org-pandoc-export-to-markdown-and-open)
-;;     (?' "as markdown." org-pandoc-export-as-markdown)
-;;     )
-;;   "Pandoc menu-entry."
-;;   :group 'org-pandoc
-;;   :type 'list)
-;;   :after ox)
-
-
-;; cnfonts
-;;(use-package! cnfonts
+;;
+(require 'ox-qmd)
