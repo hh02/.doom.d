@@ -64,4 +64,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 ;;
-(require 'ox-qmd)
+(setq org-pandoc-options-for-gfm '((atx-headers . t)))
+(setq org-pandoc-format-extensions '(gfm+tex_math_dollars))
+;; set org export headline level
+;; (set org-export-headline-levels 6) ;; default is 3

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-07-28 二 15:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="huihao" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org543cb8e">1. 标题</a>
+<ul>
+<li><a href="#org72bef90">1.1. math 1</a></li>
+<li><a href="#orge96806b">1.2. math 2</a></li>
+<li><a href="#orga57e673">1.3. math 3</a></li>
+<li><a href="#orga1c1f4a">1.4. math 4</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org543cb8e" class="outline-2">
+<h2 id="org543cb8e"><span class="section-number-2">1</span> 标题</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org72bef90" class="outline-3">
+<h3 id="org72bef90"><span class="section-number-3">1.1</span> math 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+$a*b$
+</p>
+</div>
+</div>
+<div id="outline-container-orge96806b" class="outline-3">
+<h3 id="orge96806b"><span class="section-number-3">1.2</span> math 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+\(a*b\)
+</p>
+</div>
+</div>
+<div id="outline-container-orga57e673" class="outline-3">
+<h3 id="orga57e673"><span class="section-number-3">1.3</span> math 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+$$\frac{a}{b}$$
+</p>
+</div>
+</div>
+<div id="outline-container-orga1c1f4a" class="outline-3">
+<h3 id="orga1c1f4a"><span class="section-number-3">1.4</span> math 4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+\[\frac{a}{b}\]
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #5B6268;">;;; </span><span style="color: #5B6268;">core/autoload/fonts.el -*- lexical-binding: t; -*-</span>
+
+<span style="color: #5B6268;">;;;</span><span style="color: #5B6268;">###</span><span style="color: #ECBE7B;">autoload</span>
+<span style="color: #51afef;">(</span><span style="color: #51afef;">defvar</span> <span style="color: #dcaeea;">doom-font-increment</span> <span style="color: #da8548; font-weight: bold;">2</span>
+  <span style="color: #83898d;">"How many steps to increase the font size each time `</span><span style="color: #a9a1e1;">doom/increase-font-size</span><span style="color: #83898d;">'</span>
+<span style="color: #83898d;">or `</span><span style="color: #a9a1e1;">doom/decrease-font-size</span><span style="color: #83898d;">' are invoked."</span><span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;">;;;</span><span style="color: #5B6268;">###</span><span style="color: #ECBE7B;">autoload</span>
+<span style="color: #51afef;">(</span><span style="color: #51afef;">defvar</span> <span style="color: #dcaeea;">doom-big-font</span> nil
+  <span style="color: #83898d;">"The font to use for `</span><span style="color: #a9a1e1;">doom-big-font-mode</span><span style="color: #83898d;">'. If nil, `</span><span style="color: #a9a1e1;">doom-font</span><span style="color: #83898d;">' will be used,</span>
+<span style="color: #83898d;">scaled up by `</span><span style="color: #a9a1e1;">doom-big-font-increment</span><span style="color: #83898d;">'. See `</span><span style="color: #a9a1e1;">doom-font</span><span style="color: #83898d;">' for details on</span>
+<span style="color: #83898d;">acceptable values for this variable."</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-c++"><span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #98be65;">&lt;bits/stdc++.h&gt;</span>
+<span style="color: #51afef;">using</span> <span style="color: #51afef;">namespace</span> <span style="color: #a9a1e1;">std</span>;
+<span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">main</span>() {
+  <span style="color: #51afef;">return</span> <span style="color: #da8548; font-weight: bold;">0</span>;
+}
+</pre>
+</div>
+<p>
+;;;###autoload
+(defvar doom-big-font-increment 4
+  &ldquo;How many steps to increase the font size (with `doom-font&rsquo; as the base) when
+`doom-big-font-mode&rsquo; is enabled and `doom-big-font&rsquo; is nil.&rdquo;)
+</p>
+
+
+<p>
+;;
+;;; Library
+</p>
+
+<p>
+(defun doom&#x2013;font-name (fontname)
+  (when (query-fontset fontname)
+    (when-let (ascii (assq &rsquo;ascii (aref (fontset-info fontname) 2)))
+      (setq fontname (nth 2 ascii))))
+  (or (x-decompose-font-name fontname)
+      (error &ldquo;Cannot decompose font name&rdquo;)))
+</p>
+
+<p>
+(defvar doom&#x2013;font-scale nil)
+;;;###autoload
+(defun doom-adjust-font-size (increment)
+  &ldquo;Increase size of font in FRAME by INCREMENT.
+FRAME parameter defaults to current frame.&rdquo;
+  (if (null increment)
+      (progn
+        (set-frame-font doom-font &rsquo;keep-size t)
+        (setf (alist-get &rsquo;font default-frame-alist)
+              (cond ((stringp doom-font) doom-font)
+                    ((fontp doom-font) (font-xlfd-name doom-font))
+                    ((signal &rsquo;wrong-type-argument (list &rsquo;(fontp stringp)
+                                                        doom-font)))))
+        t)
+    (let* ((font (frame-parameter nil &rsquo;font))
+           (font (doom&#x2013;font-name font))
+           (increment (* increment doom-font-increment))
+           (zoom-factor (or doom&#x2013;font-scale 0)))
+      (let ((new-size (+ (string-to-number (aref font xlfd-regexp-pixelsize-subnum))
+                         increment)))
+        (unless (&gt; new-size 0)
+          (error &ldquo;Font is too small at %d&rdquo; new-size))
+        (aset font xlfd-regexp-pixelsize-subnum (number-to-string new-size)))
+      ;; Set point size &amp; width to &ldquo;<b>&ldquo;, so frame width will adjust to new font size
+      (aset font xlfd-regexp-pointsize-subnum &rdquo;</b>&rdquo;)
+      (aset font xlfd-regexp-avgwidth-subnum &ldquo;*&rdquo;)
+      (setq font (x-compose-font-name font))
+      (unless (x-list-fonts font)
+        (error &ldquo;Cannot change font size&rdquo;))
+      (set-frame-font font &rsquo;keep-size t)
+      (setf (alist-get &rsquo;font default-frame-alist) font)
+      (setq doom&#x2013;font-scale (+ zoom-factor increment))
+      ;; Unlike `set-frame-font&rsquo;, `set-frame-parameter&rsquo; won&rsquo;t trigger this
+      (run-hooks &rsquo;after-setting-font-hook))))
+</p>
+
+
+<p>
+;;
+;;; Commands
+</p>
+
+<p>
+;;;###autoload
+(defun doom/reload-font ()
+  &ldquo;Reload your fonts, if they&rsquo;re set.
+See `doom-init-fonts-h&rsquo;.&rdquo;
+  (interactive)
+  (when doom-font
+    (set-frame-font doom-font t))
+  (doom-init-fonts-h)
+  (mapc #&rsquo;doom-init-extra-fonts-h (frame-list)))
+</p>
+
+<p>
+;;;###autoload
+(defun doom/increase-font-size (count)
+  &ldquo;Enlargens the font size across the current and child frames.&rdquo;
+  (interactive &ldquo;p&rdquo;)
+  (doom-adjust-font-size count))
+</p>
+
+<p>
+;;;###autoload
+(defun doom/decrease-font-size (count)
+  &ldquo;Shrinks the font size across the current and child frames.&rdquo;
+  (interactive &ldquo;p&rdquo;)
+  (doom-adjust-font-size (- count)))
+</p>
+
+<p>
+;;;###autoload
+(defun doom/reset-font-size ()
+  &ldquo;Reset font size and `text-scale&rsquo;.
+Assuming it has been adjusted via `doom/increase-font-size&rsquo; and
+`doom/decrease-font-size&rsquo;, or `text-scale-*&rsquo; commands.&rdquo;
+  (interactive)
+  (let (success)
+    (when (and (boundp &rsquo;text-scale-mode-amount)
+               (/= text-scale-mode-amount 0))
+      (text-scale-set 0)
+      (setq success t))
+    (when (doom-adjust-font-size nil)
+      (setq success t))
+    (unless success
+      (user-error &ldquo;The font hasn&rsquo;t been resized&rdquo;))))
+</p>
+
+<p>
+;;;###autoload
+(define-minor-mode doom-big-font-mode
+  &ldquo;A global mode that resizes the font, for streams, screen-sharing and
+presentations.
+This uses `doom/increase-font-size&rsquo; under the hood, and enlargens the font by
+`doom-big-font-increment&rsquo;.&rdquo;
+  :init-value nil
+  :lighter &ldquo; BIG&rdquo;
+  :global t
+  (unless doom-font
+    (user-error &ldquo;`doom-font&rsquo; must be set to a valid font&rdquo;))
+  (if doom-big-font
+      (let ((font (if doom-big-font-mode doom-big-font doom-font)))
+        (set-frame-font font &rsquo;keep-size t)
+        (setf (alist-get &rsquo;font default-frame-alist)
+              (cond ((stringp doom-font) font)
+                    ((fontp font) (font-xlfd-name font))
+                    ((signal &rsquo;wrong-type-argument (list &rsquo;(fontp stringp)
+                                                        font))))))
+    (doom-adjust-font-size
+     (and doom-big-font-mode
+          (integerp doom-big-font-increment)
+          (/= doom-big-font-increment 0)
+          doom-big-font-increment))))
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: huihao</p>
+<p class="date">Created: 2020-07-28 二 15:06</p>
+</div>
+</body>
+</html>
