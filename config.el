@@ -24,11 +24,12 @@
 ;;
 
 ;; fonts
-(when (member "Sarasa Nerd Font" (font-family-list))
+;; (when (member "Sarasa Nerd Font" (font-family-list))
   (setq doom-font (font-spec :family "Sarasa Nerd Font" :size 20)
         doom-variable-pitch-font (font-spec :family "Sarasa Nerd Font")
         doom-unicode-font (font-spec :family "Sarasa Nerd Font")
-        doom-big-font (font-spec :family "Sarasa Nerd Font" :size 24)))
+        doom-big-font (font-spec :family "Sarasa Nerd Font" :size 24))
+;; )
 
 
 
@@ -68,3 +69,11 @@
 (setq org-pandoc-format-extensions '(gfm+tex_math_dollars))
 ;; set org export headline level
 ;; (set org-export-headline-levels 6) ;; default is 3
+(require 'rime)
+
+;;; Code:
+(setq rime-user-data-dir "~/.config/fcitx/rime")
+(setq default-input-method "rime")
+
+(with-eval-after-load 'vterm
+  (evil-define-key 'insert vterm-mode-map (kbd "C-c C-x") 'vterm-send-C-x))
