@@ -1,10 +1,10 @@
 __build_info:
   rime_version: 1.5.3
   timestamps:
+    bopomofo.custom: 0
+    bopomofo.schema: 1576692787
     default: 1576692787
-    default.custom: 1596455951
-    terra_pinyin.custom: 0
-    terra_pinyin.schema: 1576692787
+    default.custom: 1596905629
 custom_phrase:
   db_class: stabledb
   dictionary: ""
@@ -12,6 +12,9 @@ custom_phrase:
   enable_sentence: false
   initial_quality: 1
   user_dict: custom_phrase
+editor:
+  bindings:
+    space: toggle_selection
 engine:
   filters:
     - simplifier
@@ -24,7 +27,7 @@ engine:
     - punctuator
     - selector
     - navigator
-    - express_editor
+    - fluency_editor
   segmentors:
     - ascii_segmentor
     - matcher
@@ -70,10 +73,14 @@ key_binder:
     - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
     - {accept: "Shift+space", toggle: full_shape, when: always}
     - {accept: "Control+period", toggle: ascii_punct, when: always}
+    - {accept: comma, send: comma, when: has_menu}
+    - {accept: period, send: period, when: has_menu}
     - {accept: minus, send: minus, when: has_menu}
     - {accept: minus, send: Page_Up, when: paging}
+    - {accept: equal, send: Page_Down, when: has_menu}
   import_preset: default
 menu:
+  alternative_select_keys: ABCDEFGHIJ
   page_size: 9
 punctuator:
   full_shape:
@@ -89,26 +96,21 @@ punctuator:
     ")": "）"
     "*": ["＊", "·", "・", "×", "※", "❂"]
     "+": "＋"
-    ",": {commit: "，"}
-    "-": "－"
-    .: {commit: "。"}
-    "/": ["／", "÷"]
-    ":": {commit: "："}
-    ";": {commit: "；"}
-    "<": ["《", "〈", "«", "‹"]
+    ":": ["：", "；"]
+    "<": {commit: "，"}
     "=": "＝"
-    ">": ["》", "〉", "»", "›"]
-    "?": {commit: "？"}
+    ">": {commit: "。"}
+    "?": ["？", "／", "÷"]
     "@": ["＠", "☯"]
-    "[": ["「", "【", "〔", "［"]
+    "[": ["「", "【", "《", "〔", "［"]
     "\\": ["、", "＼"]
-    "]": ["」", "】", "〕", "］"]
+    "]": ["」", "】", "》", "〕", "］"]
     "^": {commit: "……"}
-    _: "——"
+    _: ["——", "－"]
     "`": "｀"
-    "{": ["『", "〖", "｛"]
+    "{": ["『", "〖", "〈", "｛"]
     "|": ["·", "｜", "§", "¦"]
-    "}": ["』", "〗", "｝"]
+    "}": ["』", "〗", "〉", "｝"]
     "~": "～"
   half_shape:
     "!": {commit: "！"}
@@ -122,110 +124,119 @@ punctuator:
     ")": "）"
     "*": ["*", "＊", "·", "・", "×", "※", "❂"]
     "+": "+"
-    ",": {commit: "，"}
-    "-": "-"
-    .: {commit: "。"}
-    "/": ["、", "/", "／", "÷"]
-    ":": {commit: "："}
-    ";": {commit: "；"}
-    "<": ["《", "〈", "«", "‹"]
+    ":": ["：", "；"]
+    "<": {commit: "，"}
     "=": "="
-    ">": ["》", "〉", "»", "›"]
-    "?": {commit: "？"}
+    ">": {commit: "。"}
+    "?": ["？", "／", "/", "÷"]
     "@": "@"
-    "[": ["「", "【", "〔", "［"]
+    "[": ["「", "【", "《", "〔", "［"]
     "\\": ["、", "\\", "＼"]
-    "]": ["」", "】", "〕", "］"]
+    "]": ["」", "】", "》", "〕", "］"]
     "^": {commit: "……"}
-    _: "——"
+    _: ["——", "－", "-"]
     "`": "`"
-    "{": ["『", "〖", "｛"]
+    "{": ["『", "〖", "〈", "｛"]
     "|": ["·", "|", "｜", "§", "¦"]
-    "}": ["』", "〗", "｝"]
-    "~": ["~", "～"]
-  import_preset: default
+    "}": ["』", "〗", "〉", "｝"]
+    "~": "~"
 recognizer:
-  import_preset: default
   patterns:
-    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    email: "^[a-z][-_.0-9a-z]*@.*$"
     reverse_lookup: "`[a-z]*'?$"
-    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
-    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+    uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp:|mailto:).*$"
 reverse_lookup:
   comment_format:
-    - "xform ([aeiou])(ng?|r)([1234]) $1$3$2"
-    - "xform ([aeo])([iuo])([1234]) $1$3$2"
-    - "xform a1 ā"
-    - "xform a2 á"
-    - "xform a3 ǎ"
-    - "xform a4 à"
-    - "xform e1 ē"
-    - "xform e2 é"
-    - "xform e3 ě"
-    - "xform e4 è"
-    - "xform o1 ō"
-    - "xform o2 ó"
-    - "xform o3 ǒ"
-    - "xform o4 ò"
-    - "xform i1 ī"
-    - "xform i2 í"
-    - "xform i3 ǐ"
-    - "xform i4 ì"
-    - "xform u1 ū"
-    - "xform u2 ú"
-    - "xform u3 ǔ"
-    - "xform u4 ù"
-    - "xform v1 ǖ"
-    - "xform v2 ǘ"
-    - "xform v3 ǚ"
-    - "xform v4 ǜ"
-    - "xform/([nljqxy])v/$1ü/"
-    - "xform/eh[0-5]?/ê/"
-    - "xform/([a-z]+)[0-5]/$1/"
-  dictionary: stroke
+    - "xform/e?r5$/er5/"
+    - "xform/iu/iou/"
+    - "xform/ui/uei/"
+    - "xform/ong/ung/"
+    - "xform/^yi?/i/"
+    - "xform/^wu?/u/"
+    - "xform/iu/v/"
+    - "xform/^([jqx])u/$1v/"
+    - "xform/([iuv])n/$1en/"
+    - "xform/zh/Z/"
+    - "xform/ch/C/"
+    - "xform/sh/S/"
+    - "xform/ai/A/"
+    - "xform/ei/I/"
+    - "xform/ao/O/"
+    - "xform/ou/U/"
+    - "xform/ang/K/"
+    - "xform/eng/G/"
+    - "xform/an/M/"
+    - "xform/en/N/"
+    - "xform/er/R/"
+    - "xform/eh/E/"
+    - "xform/([iv])e/$1E/"
+    - "xform/1//"
+    - "xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR2345|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˊˇˋ˙|"
+  dictionary: cangjie5
   enable_completion: true
   preedit_format:
-    - "xlit/hspnz/一丨丿丶乙/"
+    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
   prefix: "`"
   suffix: "'"
-  tips: "〔筆畫〕"
+  tips: "〔倉頡〕"
 schema:
   author:
     - "佛振 <chen.sst@gmail.com>"
   dependencies:
-    - stroke
+    - cangjie5
   description: |
-    「漢語拼音」，以符號按鍵 - / < \ 輸入四聲
-    拼音碼表根據 CC-CEDICT 改編
+    注音符號輸入，採用「大千式」鍵盤排列。
     
-  name: "地球拼音"
-  schema_id: terra_pinyin
-  version: 0.19
+    本方案採用「無模式」設計，以大寫字母鍵或上下方向鍵、回車鍵選詞；
+    空格鍵輸入第一聲，標記爲「ˉ」。
+    
+    請配合 librime>=0.9.8 使用。
+    
+  name: "注音"
+  schema_id: bopomofo
+  version: 2.1
 speller:
   algebra:
     - "erase/^xx$/"
+    - "xform/^m(\\d)$/mu$1/"
     - "xform/^r5$/er5/"
-    - "abbrev/^([a-z]).+$/$1/"
-    - "abbrev/^([zcs]h).+$/$1/"
-    - "derive/^([nl])ve/$1ue/"
-    - "derive/^([jqxy])u/$1v/"
-    - "derive/un$/uen/"
-    - "derive/ui/uei/"
-    - "derive/iu/iou/"
-    - "derive/ao/oa/"
-    - "derive/([aeiou])ng/$1gn/"
-    - "derive/([iu])a(o|ng?)/a$1$2/"
-    - "derive/^([a-z]+)[0-5]$/$1/"
-    - "derive/([dtngkhrzcs])o(u|ng)$/$1o/"
-    - "derive/ong$/on/"
-    - "erase/^.*5$/"
-    - "xlit 1234 -/<\\"
-    - "derive/^(.*)-$/$1;/"
-    - "derive/^(.*)<$/$1,/"
-    - "derive/^(.*)\\\\$/$1>/"
-  alphabet: "zyxwvutsrqponmlkjihgfedcba-;/<,>\\"
-  delimiter: " '"
-  initials: zyxwvutsrqponmlkjihgfedcba
+    - "xform/iu/iou/"
+    - "xform/ui/uei/"
+    - "xform/ong/ung/"
+    - "xform/^yi?/i/"
+    - "xform/^wu?/u/"
+    - "xform/iu/v/"
+    - "xform/^([jqx])u/$1v/"
+    - "xform/([iuv])n/$1en/"
+    - "xform/^zhi?/Z/"
+    - "xform/^chi?/C/"
+    - "xform/^shi?/S/"
+    - "xform/^([zcsr])i/$1/"
+    - "xform/ai/A/"
+    - "xform/ei/I/"
+    - "xform/ao/O/"
+    - "xform/ou/U/"
+    - "xform/ang/K/"
+    - "xform/eng/G/"
+    - "xform/an/M/"
+    - "xform/en/N/"
+    - "xform/er/R/"
+    - "xform/eh/E/"
+    - "xform/([iv])e/$1E/"
+    - "derive/([bpmfdtnlgkhjqxZCSrzcs])([iuv])/$2$1/"
+    - "derive/([iuv])([aoeEAIOUMNKGR])/$2$1/"
+    - "derive/([bpmfdtnlgkhjqxZCSrzcs])([aoeEAIOUMNKGR])/$2$1/"
+    - "derive/([bpmfdtnlgkhjqxZCSrzcs])([iuv])/$2$1/"
+    - "abbrev/^([bpmfdtnlgkhjqxZCSrzcs]).+$/$1/"
+    - "abbrev/^([A-Za-z]+)\\d$/$1/"
+    - "abbrev/^([bpmfdtnlgkhjqxZCSrzcs]).+(\\d)$/$1$2/"
+    - "xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR12345|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347|"
+  alphabet: "1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347"
+  delimiter: "'"
+  finals: " 6347"
+  initials: "1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-"
+  use_space: true
 switches:
   - name: ascii_mode
     reset: 0
@@ -237,66 +248,7 @@ switches:
   - name: ascii_punct
     states: ["。，", "．，"]
 translator:
-  comment_format:
-    - "xform ([aeiou])(ng?|r)([1234]) $1$3$2"
-    - "xform ([aeo])([iuo])([1234]) $1$3$2"
-    - "xform a1 ā"
-    - "xform a2 á"
-    - "xform a3 ǎ"
-    - "xform a4 à"
-    - "xform e1 ē"
-    - "xform e2 é"
-    - "xform e3 ě"
-    - "xform e4 è"
-    - "xform o1 ō"
-    - "xform o2 ó"
-    - "xform o3 ǒ"
-    - "xform o4 ò"
-    - "xform i1 ī"
-    - "xform i2 í"
-    - "xform i3 ǐ"
-    - "xform i4 ì"
-    - "xform u1 ū"
-    - "xform u2 ú"
-    - "xform u3 ǔ"
-    - "xform u4 ù"
-    - "xform v1 ǖ"
-    - "xform v2 ǘ"
-    - "xform v3 ǚ"
-    - "xform v4 ǜ"
-    - "xform/([nljqxy])v/$1ü/"
-    - "xform/eh[0-5]?/ê/"
-    - "xform/([a-z]+)[0-5]/$1/"
   dictionary: terra_pinyin
   preedit_format:
-    - "xform/([nl])v/$1ü/"
-    - "xform/([nl])ue/$1üe/"
-    - "xform/([jqxy])v/$1u/"
-    - "xform/eh/ê/"
-    - "xform ([aeiou])(ng?|r)([-;/<,>\\\\]) $1$3$2"
-    - "xform ([aeo])([iuo])([-;/<,>\\\\]) $1$3$2"
-    - "xform a[-;] ā"
-    - "xform a/ á"
-    - "xform a[<,] ǎ"
-    - "xform a[>\\\\] à"
-    - "xform e[-;] ē"
-    - "xform e/ é"
-    - "xform e[<,] ě"
-    - "xform e[>\\\\] è"
-    - "xform o[-;] ō"
-    - "xform o/ ó"
-    - "xform o[<,] ǒ"
-    - "xform o[>\\\\] ò"
-    - "xform i[-;] ī"
-    - "xform i/ í"
-    - "xform i[<,] ǐ"
-    - "xform i[>\\\\] ì"
-    - "xform u[-;] ū"
-    - "xform u/ ú"
-    - "xform u[<,] ǔ"
-    - "xform u[>\\\\] ù"
-    - "xform ü[-;] ǖ"
-    - "xform ü/ ǘ"
-    - "xform ü[<,] ǚ"
-    - "xform ü[>\\\\] ǜ"
-  spelling_hints: 5
+    - "xlit|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347'|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˊˇˋ˙ |"
+  prism: bopomofo

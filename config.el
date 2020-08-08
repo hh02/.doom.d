@@ -72,7 +72,7 @@
 (require 'rime)
 
 ;;; Code:
-(setq rime-user-data-dir "~/.doom.d/fcitx/rime")
+(setq rime-user-data-dir "~/.doom.d/rime")
 (setq default-input-method "rime")
 
 (with-eval-after-load 'vterm
